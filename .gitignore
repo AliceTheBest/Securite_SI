@@ -18,7 +18,6 @@
 ###< symfony/web-server-bundle ###
 
 ###> custom ###
-composer.json
 composser.lock
 symfony.lock
 ###< custom ###
