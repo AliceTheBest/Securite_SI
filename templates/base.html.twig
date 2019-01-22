@@ -20,7 +20,9 @@
     <body id="{% block body_id %}{% endblock %}">
 
         {% block header %}
-            <div class="logo"><span class="M">M</span>.<span class="A">A</span> <strong>Security</strong></div>
+            <div class="logo"><!--<span class="M">M</span>.<span class="A">A</span>-->
+            <img src="assets/img/ma.png" height="70">
+             <strong>Security</strong></div>
 <!--             <header id="header" class="bck1 border-bottom">
                 <div class="container">
                     <h1>{% if title is defined %}{{title}}{% else %}Header{% endif %}</h1>
@@ -91,7 +93,7 @@
         </div>
 
         {% block footer %}
-            <footer id="footer" class="bck1 border-top">
+            <footer id="footer">
                 <div class="container">
                     <div>Site réalisé par Alice et Melmo - Tous droits réservés © M.A Security</div>
                 </div>
