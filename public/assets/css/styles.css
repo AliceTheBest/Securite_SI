@@ -1,0 +1,70 @@
+/*base*/
+
+html {
+  height: 100%;
+}
+
+body {
+	background: #ebeff2;
+	min-height: 100%;
+  	margin: 0;
+  	padding: 0;
+}
+
+footer {
+	position: absolute; 
+	bottom: 0;
+	left: 0; 
+	right: 0;
+	padding: 10px;
+	font-size: 15px !important;
+	text-align: center;
+}
+
+
+.bck1 {
+	background: #fff;
+}
+
+/*generique*/
+.padded {
+	padding: 15px;
+}
+
+/*header*/
+header#header {
+	margin-bottom: 20px;
+	padding: 10px;
+}
+header#header h1 {
+	text-align: center;
+	color: grey;
+}
+
+.logo {
+	padding:20px;
+	font-size: 50px;
+	text-align: center;
+	background-color: black;
+	color:white;
+	margin-bottom: 30px;
+}
+
+.M {
+	font-weight: bold;
+	color: red;
+}
+
+.A {
+	font-weight: bold;
+	color: yellow;
+}
+
+.homepage-title {
+	text-align: center;
+}
+
+.homepage-img1 {
+	margin: auto;
+	display: block;
+}

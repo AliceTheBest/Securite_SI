@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h4 class="homepage-title"><em>"Superbite."</em></h4>
+<br>
+<img class="homepage-img1" src="https://media.giphy.com/media/fPSxQDOJ7bGso/giphy.gif">
+<br>
+<hr>
+<br>
+<div>
+	<p> Vous êtes connecté en tant que : {{app.user.email}} </p>
+</div>
+{% endblock %}
