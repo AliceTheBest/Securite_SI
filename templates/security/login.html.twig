@@ -2,6 +2,12 @@
 
 {% block body %}
 
+    <div class="center">
+        <img src="assets/img/ams2.png" height="120">
+        <h1 class="bigh1">Connectez-vous</h1>
+        <h4>pour accéder à la liste des membres</h4>
+    </div>
+
     {% if error %}
         <div class="alert alert-danger">
             <ul class="list-unstyled mb-0">
@@ -11,5 +17,7 @@
             </ul>
         </div>
     {% endif %}
+    <div class="form-container">
     {{form(form)}}
+    </div>
 {% endblock %}

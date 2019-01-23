@@ -6,7 +6,9 @@ html {
 }
 
 body {
-	background: url('../img/fondec.png');
+	/*background: url('../img/fondec.png');*/
+	/*background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(4, 47, 104, 0.7), rgba(0,0,0,0.7));*/
+	background: url('../img/back.jpg');
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -18,20 +20,22 @@ body {
 
 footer {
 	position: fixed; 
-	background:linear-gradient(to right, black, #A899DB, black);
+	background:linear-gradient(to right, black, rgb(4, 47, 104), black);
 	border:none;
 	color:white;
 	bottom: 0;
 	left: 0; 
 	right: 0;
-	padding: 10px;
+	padding: 5px;
 	font-size: 15px !important;
 	text-align: center;
 }
 
 
 .bck1 {
-	background: rgba(255,255,255,0.7);
+	background: rgba(255,255,255,0.5);
+	height:100%;
+	padding-bottom:30px!important;
 }
 
 /*generique*/
@@ -42,8 +46,7 @@ footer {
 /*header*/
 header#header {
 	margin-bottom: 20px;
-
-	padding: 10px;
+	padding: 5px;
 }
 header#header h1 {
 	text-align: center;
@@ -51,12 +54,11 @@ header#header h1 {
 }
 
 .logo {
-	padding:20px;
+	padding:10px;
 	font-size: 50px;
-	text-align: center;
-	background:linear-gradient(to right, black, #A899DB, black);
+	text-align: left;
+	background:linear-gradient(to right, black, rgb(4, 47, 104), black);
 	color:white;
-	margin-bottom: 30px;
 }
 
 .M {
@@ -76,4 +78,45 @@ header#header h1 {
 .homepage-img1 {
 	margin: auto;
 	display: block;
+}
+
+nav#main-nav {
+	position: absolute;
+	top: 45px;
+	left: 190px;
+	background: transparent;
+	color: white!important;
+	font-size:20px;
+	width:calc(100%-190px)!important;
+}
+
+ul>li>a {
+	color:white;
+}
+
+ul>li>a:hover {
+	color:yellow;
+	font-size:21px;
+}
+
+.center {
+	text-align:center;
+}
+
+.bigh1 {
+	font-size:53px;
+}
+
+.form-container {
+	max-width:600px;
+	margin: 0 auto;
+}
+
+.form-container button {
+	background:linear-gradient(to right, black, rgb(4, 47, 104), black);
+	border-color:black;
+}
+.form-container button:hover {
+	opacity:0.8;
+	border-color:white;
 }
