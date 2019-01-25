@@ -54,9 +54,9 @@ class ResetPasswordController extends AbstractController {
         }
         else {
             //gestion de l'erreur
-            $name = $form['_username']->getData();
-            $usr = findOneBySomeField($name);
-            dump($usr);
+            // $name = $form['_username']->getData();
+            // $usr = findOneBySomeField($name);
+            // dump($usr);
         }
 
 
