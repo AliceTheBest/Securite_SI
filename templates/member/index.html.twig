@@ -25,9 +25,8 @@
 	</button>
 
 	<div id="chg_pass" style="display:none" class="padded">
-		<form class="form-container">
-			{{form(form)}}
-		</form>
+		{{ form_start(form, {attr: {class: 'form-container'} }) }}
+		{{form_end(form)}}
 	</div>
 </div>
 
