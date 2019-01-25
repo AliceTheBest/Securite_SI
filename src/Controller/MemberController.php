@@ -33,6 +33,7 @@ class MemberController extends AbstractController {
                 $newpass = $form['_new_password']->getData();
     
                 $this->addFlash('success', 'nouveau mot de passe '+$newpass);
+                return $this->render('member/index.html.twig', ['mainNavMember'=>true, 'form' => $form->createView()]);
             }
 
         return $this->render('member/index.html.twig', ['mainNavMember'=>true, 'form' => $form->createView()]);
