@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Extension\Core\Type\EmailResetType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Repository\UserRepository;
 
 class ResetPasswordController extends AbstractController {
 
@@ -27,6 +28,13 @@ class ResetPasswordController extends AbstractController {
         if ($form->isSubmitted() && $form->isValid()) {
 
             $name = $form['_username']->getData();
+            $length = 10;
+            $characters = '0123456789abcdefghijklmnopqrstuvwxyz';
+            $newpass = '';
+        
+            for ($p = 0; $p < $length; $p++) {
+                $newpass .= $characters[mt_rand(0, strlen($characters))];
+            }
 
             // Définition du mail a envoyer (expéditeur, destinataire, texte)
             $message = (new \Swift_Message('Réinitialisation de mot de passe - AM Security'))
@@ -34,8 +42,7 @@ class ResetPasswordController extends AbstractController {
             ->setTo($name)
             ->setBody(
                 $this->renderView(
-                    'emails/email-reset-password.html.twig'
-                
+                    'emails/email-reset-password.html.twig', ['newpass'=>$newpass]       
                 ),
                 'text/html'
             );
@@ -47,31 +54,15 @@ class ResetPasswordController extends AbstractController {
         }
         else {
             //gestion de l'erreur
+            $name = $form['_username']->getData();
+            $usr = findOneBySomeField($name);
+            dump($usr);
         }
+
 
         return $this->render('emails/reset-password.html.twig', [
             'form' => $form->createView()
         ]);
     }
-
-
-    /**
-     * @Route("/reset_password", name="reset_password")
-     */
-	//  public function new(\Swift_Mailer $mailer, Request $request)
-	// { 
-    //     $form = $this->createFormBuilder()->getForm();
-    //     $form->handleRequest($request);
-    //     //if ($form->isSubmitted() && $form->isValid()) {
-    //         $name = $form['_username']->getData();
-    //         dump($name);
-
-    //         dump($form->getData());
-    //         die();
-
-            
-    //     //}
-
-	// }
 
 }
