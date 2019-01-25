@@ -17,10 +17,6 @@ class MemberController extends Controller {
      */
     public function index() {
 
-    	    // $repository=$this->getDoctrine()->getRepository(User::class);
-
-         //    $users = $repository->find(id);
-
         return $this->render('member/index.html.twig', ['mainNavMember'=>true]);
     }
 

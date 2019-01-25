@@ -147,4 +147,21 @@ class User implements UserInterface, \Serializable {
         $this->isActive = $isActive;
     }
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $resetPassword;
+
+    public function getResetPassword(): ?string
+    {
+        return $this->resetPassword;
+    }
+
+    public function setResetPassword(string $resetPassword): self
+    {
+        $this->resetPassword = $resetPassword;
+
+        return $this;
+    }
+
 }
