@@ -26,7 +26,6 @@ class SecurityController extends Controller {
                 ->getForm();
         return $this->render('security/login.html.twig', [
                     'mainNavLogin' => true, 'title' => 'Connexion',
-                    //
                     'form' => $form->createView(),
                     'last_username' => $lastUsername,
                     'error' => $error,
