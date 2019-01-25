@@ -7,8 +7,42 @@
 <img class="homepage-img1" src="https://media.giphy.com/media/fPSxQDOJ7bGso/giphy.gif">
 <br>
 <hr>
-<br>
 <div>
+<h4>Informations utilisateur</h1>
 	<p> Vous êtes connecté en tant que : {{app.user.email}} </p>
+	<p>
+		Rôle :
+		{% if app.user.roles[0] == "ROLE_ADMIN" %}
+		Employeur
+		{% elseif app.user.roles[0] == "ROLE_USER" %}
+		Employé(e)
+		{% else %}
+		<i>(inconnu)</i>
+		{% endif %}
+	</p>
+	<button type="button" class="btn btn-default" onclick="toggleChgPass();">
+	Modifier mon mot de passe
+	</button>
+
+	<div id="chg_pass" style="display:none" class="padded">
+		<form class="form-container">
+			{{form(form)}}
+		</form>
+	</div>
 </div>
+
+{% endblock %}
+
+{% block javascripts %}
+<script>
+	function toggleChgPass() {
+		var x = document.getElementById("chg_pass");
+		if (x.style.display === "none") {
+			x.style.display = "block";
+			x.scrollIntoView();
+		} else {
+			x.style.display = "none";
+		}
+	} 
+</script>
 {% endblock %}

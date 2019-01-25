@@ -17,7 +17,16 @@ class MemberController extends Controller {
      */
     public function index() {
 
-        return $this->render('member/index.html.twig', ['mainNavMember'=>true]);
+        $form = $this->get('form.factory')
+            ->createNamedBuilder(null)
+            ->add('_current_password', \Symfony\Component\Form\Extension\Core\Type\PasswordType::class, ['label' => 'Mot de passe actuel'])
+            ->add('_new_password', \Symfony\Component\Form\Extension\Core\Type\PasswordType::class, ['label' => 'Nouveau mot de passe'])
+            ->add('_new_password_confirm', \Symfony\Component\Form\Extension\Core\Type\PasswordType::class, ['label' => 'Confirmer le nouveau mot de passe'])
+
+            ->add('ok', \Symfony\Component\Form\Extension\Core\Type\SubmitType::class, ['label' => 'Modifier', 'attr' => ['class' => 'btn-primary btn-block']])
+            ->getForm();
+
+        return $this->render('member/index.html.twig', ['mainNavMember'=>true, 'form' => $form->createView()]);
     }
 
 }
